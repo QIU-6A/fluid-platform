@@ -1,39 +1,44 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>流体力学实验数据处理 & 流变曲线分析</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-    <style>
-        :root {
-            --bg: #f0f4f8;
-            --card-bg: #ffffff;
-            --primary: #1a73e8;
-            --primary-dark: #1557b0;
-            --accent: #ff7f0e;
-            --accent-dark: #d96c0a;
-            --text: #2c3e50;
-            --text-light: #5a6c7d;
-            --border: #e2e8f0;
-            --shadow: 0 2px 12px rgba(0,0,0,0.07);
-            --radius: 12px;
-            --radius-sm: 8px;
-            --transition: 0.25s;
-            --font-mono: 'SF Mono','Cascadia Code','Consolas','Monaco',monospace;
-            --danger: #e53e3e;
-            --success: #38a169;
+<!DOCTYPE html>   < !DOCTYPE html>   < !DOCTYPE html>
+<      超文本标记语言< css长= " zh-CN"   " zh-CN" >html lang="zh-CN">
+<   <   头 head   头>head>
+       <meta   元 charset   字符集   字符集="UTF-8"   "UTF-8"><meta   元 charset   字符集   字符集="UTF-8"   "UTF-8">
+    <meta name   名字="viewport"   "viewport" content="width=device-width, initial-scale=1.0"><meta   元 name   名字   名字="viewport"   "viewport" content="width=device-width, initial-scale=1.0">
+    <title   标题>流体力学实验数据处理 & 流变曲线分析</   & lt;title>
+    <script src="https://cdn.jsdelivr.net“https://cdn.jsdelivr.net
+pm/chart.js@4.4.7/dist/chart.umd.min.js"></script><script   脚本 src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"“https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https://cdn.jsdelivr.net
+pm/chart.js@4.4.7 dist / chart.umd.min.js"></   & lt;script>
+    <script src="https://cdn.jsdelivr.net“https://cdn.jsdelivr.net
+pm   点/xlsx@0.18.5/dist   经销/xlsx.full.min   最小值.js"></script>pm/chart.js@4.4.7 dist /chart. umd.min. js>；pm/chart.js@4.4.7/dist/chart.umd.min.js"></script   脚本><script   脚本 src="https://cdn.jsdelivr.net“https://cdn.jsdelivr.net
+pm/chart.js@4.4.7/dist/chart.umd.min.js"></script><script   脚本 src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"“https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https:   “https://cdn.jsdelivr.net
+pm/xlsx@0.18.5 dist / xlsx.full.min.js"></   & lt;script>
+       < style><style      风格风格>
+        :   :根   根{root    根{
+               …bg      白马王子;bg白马王子;bg: # f0f4f8;--bg: #f0f4f8;
+               ——card      本;本卡——card-bg-   ——bgbg: # ffffff;--card   ——card   本;本卡-bg-bg: #ffffff;
+               ——主:# 1 a73e8;--primary   ——主: #1a73e8;
+               ——primary      本,本;初选本,本;primary-dark   黑暗-dark   黑暗: # 1557 b0;--primary   ——primary   本,本;初选-dark   黑暗-dark   黑暗: #1557b0;
+            --accent   ——口音: #ff7f0e;
+               ——accent      本,本;口音本,本;accent-dark   黑暗-dark   黑暗: # d96c0a;--accent   ——accent   本,本;口音-dark   黑暗-dark   黑暗: #d96c0a;
+               …文字:# 2c3e50;--text: #2   ——文本c3e50;
+               ——文字光线:# 5 a6c7d;--text   ——文字光线-light   光: #5a6c7d;
+               …边境:# e2e8f0;--border   ——边境: #e2e8f0;
+            ——阴影：0 2px 12px rgba(0,0,0,0.07)；   ,影子--shadow   影子: 0 2px 12px rgba(0,0,0,0.07);
+               ——半径:12 px;--radius      ——半径——半径: 12px;
+               ——radius      ——radius——radius-sm-sm: 8 px;--radius   …radius   白马王子;半径-sm-sm: 8px;
+               ——过渡:0.25秒;--transition   ——过渡: 0.25s      年代年代;
+            “sf monono”、“cascadia    monono”、“cascadiacode”、“领事”、“monacos”、“monacos”、“monacos”、“monacos”、“monacos”、“monacos”、“monacos”、“monacos”、“monacos”--code”、“领事”、“monacos”、“monacos”、“monacos”、“monacos”、“monacos”、“monacos”、“monacos”、“monacos”、“monacos”--font   字体-monofont-mono   莫诺: 'SF Mono'   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”   “科幻Mono”,'Cascadia Code'   “卡斯卡底古陆代码”,'Consolas'   ’Consolas’   &rsquo Consolas’,'Monaco'   “摩纳哥”,monospace      等宽字体等宽字体;
+            --danger   ——危险: #e53e3e;
+               ——成功:# 38 a169;--success   ——成功: #38a169;
         }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: var(--bg); color: var(--text); line-height:1.6; min-height:100vh; padding-bottom:40px;
+        * *{边距：0；填充:0;box   盒子-sizing   分级: border   边境-box   盒子;｝{ margin      保证金保证金:0; padding      填充填充:0; box   盒子-sizing   分级:border   边境-box   盒子; }
+           身体{body       身体身体{
+            font         字体字体字体类型-family      家庭家庭: -apple         苹果苹果苹果系统-system      系统系统, BlinkMacSystemFont, 'Segoe UI'   “Segoe UI”   “Segoe          “ Segoe“ Segoe“ SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”      SegoeUI”SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”, 'PingFang SC'   “巴航SC”, 'Microsoft YaHei'   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”, sans      没有无衬线;字体类型-serif；font-family   家庭: -apple         苹果苹果系统苹果系统-system   系统, BlinkMacSystemFont, 'Segoe UI'   “Segoe    “ SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”   SegoeUI”, 'PingFang SC'   “巴航SC”, 'Microsoft YaHei'   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”   “微软YaHei”, sans-serif   衬线;
+            背景      背景背景:var (bg);颜色:var(文本);行高:1.6;最小高度:100 vh;padding   填充-bottom   底: 40像素;background      背景背景: var(--   ——bgbg); color         颜色颜色颜色: var(--   ——文本text); line      行行高-height   高度:1.6; min      最小值最小高度-height   高度:100vh; padding   填充-bottom   底:40px;
         }
-        .app-header {
-            background: linear-gradient(135deg, #1a3a5c 0%, #1a5276 40%, #1a6daa 100%);
-            color:#fff; padding:16px 24px; box-shadow:0 4px 20px rgba(0,0,0,0.15);
-            position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between;
+        .   ．app-header   头 {app-header   头 {
+            背景：线性渐变（135度，#1a3a5c 0%, #1a5276 40%, #1a6daa 100%）；background: linear      线性线性渐变-gradient   梯度(135deg, #1a3a5c 0%, #1a5276 40%, #1a6daa 100%);
+            颜色   颜色:# fff;填充:16 px 24 px;Box      盒子不必-shadow   影子:0 4px 20px rgba(0,0,0,0.15)；color   ,颜色   ,颜色:#fff; padding      填充填充:16px 24px; box      盒子不必-shadow   影子:0 4px 20px rgba(0,0,0,0.15);
+            位置:粘性;上图:0;z - index   指数: 100;显示:flex;对齐项目:中心;justify-content   内容:之间的空间;position         位置位置位置:sticky      粘性的粘性的; top      前前:0; z-index   指数:100; display      显示显示:flex; align   对齐项目-items:center      中心中心; justify-content   内容:space   之间的空间-between;
             flex-wrap:wrap; gap:12px;
         }
         .app-header .logo { display:flex; align-items:center; gap:10px; font-size:1.25rem; font-weight:700; }
@@ -244,11 +249,11 @@
             </div>
 
             <div class="card">
-                <div class="card-header"><span class="badge-orange">设置</span>静切力读数 φ₃</div>
+                <div class="card-header"><span class="badge-orange">设置</span>剪切力读数 φ₃</div>
                 <div class="form-row">
                     <div class="form-group"><label>φ₃ (1 min)</label><input type="number" class="form-input" id="inputPhi3_1min" placeholder="可选" step="any"></div>
                     <div class="form-group"><label>φ₃ (10 min)</label><input type="number" class="form-input" id="inputPhi3_10min" placeholder="可选" step="any"></div>
-                    <button class="btn btn-outline btn-sm" onclick="updatePhi3()">💾 保存静切力</button>
+                    <button class="btn btn-outline btn-sm" onclick="updatePhi3()">💾 保存剪切力</button>
                 </div>
             </div>
 
